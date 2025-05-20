@@ -14,15 +14,17 @@ const HeroSection = () => {
             </h1>
           </div>
 
-          <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-            Experienced full-stack developer with 2+ years of expertise in Laravel, NestJS, and Nuxt.js.
-          </p>
+         <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
+  Passionate Full Stack Web & App Developer with real-world experience in building responsive and user-friendly apps. Currently studying B.Sc. in Computer Science & Engineering, and eager to use my skills to contribute to creative and meaningful projects.
+</p>
+
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">
             <a
               href="mailto:ssjoy43@gmail.com"
-              className="relative px-6 py-2 font-semibold text-black rounded overflow-hidden bg-[#00FFFF] transition hover:bg-opacity-90"
+              className="relative px-6 py-2 font-semibold  rounded 
+              overflow-hidden bg-red-500 transition hover:bg-opacity-90"
             >
               Hire Me
             </a>
