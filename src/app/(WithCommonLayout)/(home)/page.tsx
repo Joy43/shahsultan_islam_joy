@@ -1,9 +1,7 @@
 
 import ParticlesAnimation from "@/components/animation/particles"
 import AboutMeSection from "@/components/modules/home/AboutMeSection";
-
 import HeroSection from "@/components/modules/home/HeoSection"
-import ProjectPage from "@/components/modules/project";
 import AllProject from "../project/page";
 
 const HomePage = () => {

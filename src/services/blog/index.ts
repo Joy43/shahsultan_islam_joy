@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
-export const getAllProject = async () => {
+
+export const getAllBlog = async () => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/project`);
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/blog`);
     const data = await res.json();
     return data;
   } catch (error: any) {
@@ -11,11 +12,11 @@ export const getAllProject = async () => {
 };
 
 // get single product
-export const getSingleProject = async (projectId: string) => {
+export const getSingleBlog = async (blogId: string) => {
   try {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/project/${projectId}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API}/blog/${blogId}`, {
       next: {
-        tags: ["PROJECT"],
+        tags: ["BLOG"],
       },
     });
     const data = await res.json();
