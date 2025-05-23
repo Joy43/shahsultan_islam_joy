@@ -1,23 +1,22 @@
-
 import BlogDetails from "@/components/modules/blog/blogDetails";
 import { getSingleBlog } from "@/services/blog";
+import { notFound } from "next/navigation";
 
+const BlogDetailsPage = async ({ params }: { params: { blogId: string } }) => {
+  try {
+    const { blogId } = params;
+    const { data: blog } = await getSingleBlog(blogId);
 
-const ProductDetailsPage = async ({
-  params,
-}: {
-  params: Promise<{ blogId: string }>;
-}) => {
-  const { blogId } = await params;
+    if (!blog) return notFound();
 
-  const { data: blogs } = await getSingleBlog(blogId);
-
-  return (
-    <div>
-      
-      <BlogDetails blogs={blogs} />
-    </div>
-  );
+    return (
+      <main className="bg-gray-50 min-h-screen">
+        <BlogDetails blog={blog} />
+      </main>
+    );
+  } catch (error) {
+    return notFound();
+  }
 };
 
-export default ProductDetailsPage;
+export default BlogDetailsPage;

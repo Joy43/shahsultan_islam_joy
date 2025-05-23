@@ -19,15 +19,7 @@ const AllProject = async () => {
         <p>No projects found.</p>
       )}
 
-      {categories && categories.length > 0 ? (
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 mb-8">
-    {categories.map((category:any) => (
-      <CategoryCard key={category._id} category={category} />
-    ))}
-  </div>
-) : (
-  <p>No categories found.</p>
-)}
+
     </div>
   );
 };

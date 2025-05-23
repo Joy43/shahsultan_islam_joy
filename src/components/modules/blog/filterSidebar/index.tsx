@@ -1,10 +1,8 @@
-// FilterSidebar.tsx
 'use client';
 
 import { useEffect, useState } from "react";
 import { BlogFilters } from "@/types/blogFilter.types";
 import { getAllCategories } from "@/services/category";
-
 
 interface Category {
   _id: string;
@@ -43,6 +41,8 @@ const FilterSidebar = ({ filters, setFilters }: FilterSidebarProps) => {
       <section>
         <h2 className="text-xl font-semibold mb-4 text-gray-800">Filters</h2>
         <div className="space-y-5">
+
+          {/* Search Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Search
@@ -58,34 +58,54 @@ const FilterSidebar = ({ filters, setFilters }: FilterSidebarProps) => {
             />
           </div>
 
+          {/* Category List */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Category
             </label>
             {loading ? (
-              <div className="flex justify-center items-center h-10">
-               Loading
-              </div>
+              <div className="flex justify-center items-center h-10">Loading...</div>
             ) : error ? (
               <p className="text-red-500 text-sm">{error}</p>
             ) : (
-              <select
-                value={filters.category}
-                onChange={(e) =>
-                  setFilters((prev) => ({ ...prev, category: e.target.value }))
-                }
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white text-gray-700 appearance-none"
-              >
-                <option value="">All Categories</option>
+              <ul className="space-y-2">
+                {/* All Categories */}
+                <li
+                  onClick={() => setFilters((prev) => ({ ...prev, category: "" }))}
+                  className={`flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-gray-100 ${
+                    !filters.category ? "bg-gray-200 font-semibold" : ""
+                  }`}
+                >
+                  <div className="w-10 h-10 bg-gray-300 rounded-md flex items-center justify-center text-white font-bold text-xs">
+                    All
+                  </div>
+                  <span className="text-gray-800">All Categories</span>
+                </li>
+
+                {/* Fetched Categories */}
                 {categories.map((cat) => (
-                  <option key={cat._id} value={cat._id}>
-                    {cat.name}
-                  </option>
+                  <li
+                    key={cat._id}
+                    onClick={() =>
+                      setFilters((prev) => ({ ...prev, category: cat._id }))
+                    }
+                    className={`flex items-center gap-3 cursor-pointer p-2 rounded-lg hover:bg-gray-100 ${
+                      filters.category === cat._id ? "bg-blue-100 font-semibold" : ""
+                    }`}
+                  >
+                    <img
+                      src={cat.image}
+                      alt={cat.name}
+                      className="w-10 h-10 object-cover rounded-md border"
+                    />
+                    <span className="text-gray-800">{cat.name}</span>
+                  </li>
                 ))}
-              </select>
+              </ul>
             )}
           </div>
 
+          {/* Location Input */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
               Location

@@ -1,4 +1,4 @@
-import { MdDeveloperMode } from "react-icons/md";
+
 import Image from "next/image";
 
 const HeroSection = () => {
@@ -26,11 +26,19 @@ const HeroSection = () => {
               className="relative px-6 py-2 font-semibold  rounded 
               overflow-hidden bg-red-500 transition hover:bg-opacity-90"
             >
-              Hire Me
+              Send Mail
             </a>
-            <button className="relative px-6 py-2 font-semibold text-gray-900 bg-white rounded hover:bg-[#00FFFF] hover:text-gray-900 transition duration-300">
-              Latest Projects
-            </button>
+  <a
+  href="/joy.pdf"
+  download
+  className="inline-block"
+>
+  <button className="relative px-6 py-2 font-semibold text-gray-900 bg-white rounded hover:bg-[#00FFFF] hover:text-gray-900 transition duration-300">
+    Download CV
+  </button>
+</a>
+
+
           </div>
 
           {/* Experience Stats */}
@@ -50,7 +58,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Right Section */}
+        {/*---------------------Right Section ----------------------*/}
         <div className="w-full md:w-1/2 relative flex items-center justify-center">
           <div className="relative w-full ">
             <Image
