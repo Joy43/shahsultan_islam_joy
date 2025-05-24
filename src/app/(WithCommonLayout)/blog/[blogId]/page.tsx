@@ -2,12 +2,21 @@ import BlogDetails from "@/components/modules/blog/blogDetails";
 import { getSingleBlog } from "@/services/blog";
 import { notFound } from "next/navigation";
 
-const BlogDetailsPage = async ({ params }: { params: { blogId: string } }) => {
+interface BlogDetailsPageProps {
+  params: {
+    blogId: string;
+  };
+}
+
+const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
   try {
     const { blogId } = params;
-    const { data: blog } = await getSingleBlog(blogId);
 
-    if (!blog) return notFound();
+    if (!blogId) {
+      throw new Error("Blog ID is required");
+    }
+
+    const { data: blog } = await getSingleBlog(blogId);
 
     return (
       <main className="bg-gray-50 min-h-screen">
@@ -15,7 +24,8 @@ const BlogDetailsPage = async ({ params }: { params: { blogId: string } }) => {
       </main>
     );
   } catch (error) {
-    return notFound();
+    console.error("Blog fetch failed:", error);
+    notFound(); // Show the 404 page
   }
 };
 
