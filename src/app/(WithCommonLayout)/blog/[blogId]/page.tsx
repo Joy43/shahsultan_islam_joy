@@ -1,7 +1,5 @@
 import BlogDetails from "@/components/modules/blog/blogDetails";
 import { getSingleBlog } from "@/services/blog";
-
-
 const blogDetailsPage = async ({
   params,
 }: {
