@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { BlogFilters } from "@/types/blogFilter.types";
 import { getAllCategories } from "@/services/category";
 
@@ -93,9 +94,10 @@ const FilterSidebar = ({ filters, setFilters }: FilterSidebarProps) => {
                       filters.category === cat._id ? "bg-blue-100 font-semibold" : ""
                     }`}
                   >
-                    <img
+                    <Image
                       src={cat.image}
                       alt={cat.name}
+                      fill
                       className="w-10 h-10 object-cover rounded-md border"
                     />
                     <span className="text-gray-800">{cat.name}</span>

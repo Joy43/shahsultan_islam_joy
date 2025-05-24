@@ -1,32 +1,15 @@
-import BlogDetails from "@/components/modules/blog/blogDetails";
-import { getSingleBlog } from "@/services/blog";
-import { notFound } from "next/navigation";
+import ProjectPage from "@/components/modules/project";
+import { getAllProject } from "@/services/project";
 
-interface BlogDetailsPageProps {
-  params: {
-    blogId: string;
-  };
-}
+const AllProject = async () => {
+  const { data: project } = await getAllProject();
 
-const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
-  try {
-    const { blogId } = params;
+    
+  return (
+    <div>
+      <ProjectPage projects ={project} /> 
+    </div>
 
-    if (!blogId) {
-      throw new Error("Blog ID is required");
-    }
+  )}
 
-    const { data: blog } = await getSingleBlog(blogId);
-
-    return (
-      <main className="bg-gray-50 min-h-screen">
-        <BlogDetails blog={blog} />
-      </main>
-    );
-  } catch (error) {
-    console.error("Blog fetch failed:", error);
-    notFound(); 
-  }
-};
-
-export default BlogDetailsPage;
+  export default AllProject;

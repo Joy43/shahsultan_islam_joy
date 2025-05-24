@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface CertificateType {
@@ -101,9 +102,10 @@ const Certificate = () => {
             >
               &times;
             </button>
-            <img
+            <Image
               src={selectedCertificate.image}
               alt={selectedCertificate.name}
+              fill
               className="h-auto w-full rounded"
             />
             <h2 className="mt-4 text-center text-lg font-semibold text-black">

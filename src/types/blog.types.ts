@@ -13,8 +13,5 @@ export interface IBlogs {
   createdAt: string;
   updatedAt: string;
   category: ICategory;
-  ratings: any[];
-  votes: any[];   
-  comments: any[]; 
   user: IUser;
 }
