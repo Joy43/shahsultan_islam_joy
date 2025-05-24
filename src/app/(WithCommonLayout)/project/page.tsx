@@ -1,27 +1,32 @@
-import CategoryCard from "@/components/modules/category";
-import ProjectAllProject from "@/components/modules/project";
-import { getAllCategories } from "@/services/category";
-import { getAllProject } from "@/services/project";
+import BlogDetails from "@/components/modules/blog/blogDetails";
+import { getSingleBlog } from "@/services/blog";
+import { notFound } from "next/navigation";
 
+interface BlogDetailsPageProps {
+  params: {
+    blogId: string;
+  };
+}
 
-const AllProject = async () => {
-  const { data: project } = await getAllProject();
-  const { data: categories } = await getAllCategories();
-     console.log("category is",categories)
-  return (
-    <div>
-      
+const BlogDetailsPage = async ({ params }: BlogDetailsPageProps) => {
+  try {
+    const { blogId } = params;
 
+    if (!blogId) {
+      throw new Error("Blog ID is required");
+    }
 
-      {project && project.length > 0 ? (
-        <ProjectAllProject projects={project} />
-      ) : (
-        <p>No projects found.</p>
-      )}
+    const { data: blog } = await getSingleBlog(blogId);
 
-
-    </div>
-  );
+    return (
+      <main className="bg-gray-50 min-h-screen">
+        <BlogDetails blog={blog} />
+      </main>
+    );
+  } catch (error) {
+    console.error("Blog fetch failed:", error);
+    notFound(); 
+  }
 };
 
-export default AllProject;
+export default BlogDetailsPage;

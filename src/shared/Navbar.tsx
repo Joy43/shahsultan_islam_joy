@@ -40,6 +40,12 @@ const Navbar = () => {
             <ul className="items-center gap-[20px] text-[1rem]  md:flex hidden">
                 <li className="transition-all duration-500 cursor-pointer 
                 hover:text-[#3B9DF8] capitalize">home</li>
+                <li className="transition-all duration-500 cursor-pointer 
+                hover:text-[#3B9DF8] capitalize">
+
+                    <Link href="/certificate">Certificate</Link>
+                </li>
+           
 
                 {/* about us mega menu */}
                 <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
@@ -100,6 +106,8 @@ const Navbar = () => {
 
                     
                 </Link>
+                     <li className="transition-all duration-500 cursor-pointer 
+                hover:text-[#3B9DF8] capitalize"><Link href="/contract">contract</Link></li>
             </ul>
 
             <div className="flex items-center gap-[10px]">
@@ -143,6 +151,9 @@ const Navbar = () => {
 
                     <li className="hover:text-[#3B9DF8] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
                         Home
+                    </li>
+                    <li className="hover:text-[#3B9DF8] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
+                        Certificate
                     </li>
 
                     <li onClick={() => setMobileAboutUsOpen(!mobileAboutUsOpen)}
