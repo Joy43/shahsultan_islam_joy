@@ -211,7 +211,7 @@ const Navbar = () => {
 
                     <li onClick={() => setMobileServiceOpen(!mobileServiceOpen)}
                         className="hover:text-[#3B9DF8] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
-                        Service
+                        About us
                         <IoIosArrowDown
                             className={`${mobileServiceOpen ? "rotate-0" : "rotate-[180deg]"} text-gray-600 group-hover:text-[#3B9DF8] transition-all duration-300`}/>
                     </li>
@@ -221,19 +221,15 @@ const Navbar = () => {
 
                         <ul className="flex flex-col gap-[7px] text-[#424242]">
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Company
-                                Details
+                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Mern stack 
                             </li>
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Company
-                                Location
+                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Full stack
                             </li>
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
                                 <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Team Members
                             </li>
-                            <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Office Tour
-                            </li>
+                            
                         </ul>
 
                         <div

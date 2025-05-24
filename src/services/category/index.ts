@@ -11,7 +11,10 @@ export const getAllCategories = async () => {
     });
 
     return res.json();
-  } catch (error: any) {
-    return Error(error);
+  }catch (error) {
+    if (error instanceof Error) {
+      return new Error(error.message);
+    }
+    return new Error("An unknown error occurred");
   }
 };

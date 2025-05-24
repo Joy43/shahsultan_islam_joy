@@ -65,9 +65,9 @@ const Certificate = () => {
             key={certificate.id}
             className="mx-auto max-w-[350px] space-y-4 rounded-lg p-6 shadow-lg md:w-[350px] bg-[#222D56] mb-4"
           >
-            <img
-              width={200}
-              height={200}
+            <Image
+              width={350}
+              height={275}
               className="h-[275px] w-[350px] rounded-lg object-cover"
               src={
                 certificate.image ||

@@ -54,9 +54,9 @@ const Contact = () => {
       <div className="grid sm:grid-cols-2 gap-16 p-8 max-w-4xl mx-auto shadow-md rounded-md font-sans">
         {/* Left Side */}
         <div>
-          <h1 className="text-3xl font-extrabold">Let's communicate</h1>
+       <h1 className="text-3xl font-extrabold">Let&apos;s communicate</h1>
           <p className="text-sm mt-2 text-gray-600">
-            Have a big idea or brand to develop? We’d love to hear about your project.
+            Have a big idea or brand to develop? we love to hear about your project.
           </p>
 
           <div className="mt-10">

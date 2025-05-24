@@ -97,7 +97,8 @@ const FilterSidebar = ({ filters, setFilters }: FilterSidebarProps) => {
                     <Image
                       src={cat.image}
                       alt={cat.name}
-                      fill
+                    width={100}
+                    height={100}
                       className="w-10 h-10 object-cover rounded-md border"
                     />
                     <span className="text-gray-800">{cat.name}</span>
