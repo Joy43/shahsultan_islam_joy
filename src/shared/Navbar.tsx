@@ -39,7 +39,7 @@ const Navbar = () => {
             {/* ------------- nav links -----------------*/}
             <ul className="items-center gap-[20px] text-[1rem]  md:flex hidden">
                 <li className="transition-all duration-500 cursor-pointer 
-                hover:text-[#3B9DF8] capitalize">home</li>
+                hover:text-[#3B9DF8] capitalize"> <Link href="/">Home</Link></li>
                 <li className="transition-all duration-500 cursor-pointer 
                 hover:text-[#3B9DF8] capitalize">
 
@@ -63,9 +63,10 @@ const Navbar = () => {
                                 className="flex flex-col gap-[10px] border-l border-[#e5eaf2] pl-[30px]">
                                 <div
                                     className="flex items-center gap-[10px] text-[1rem]">
-                                    <Link href="/blog">
+                                   
                                     <MdDashboardCustomize
                                         className="bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]"/>
+                                         <Link href="/blog">
                                     All Project
                                     </Link>
                                 </div>
@@ -150,10 +151,12 @@ const Navbar = () => {
                 <ul className="items-start gap-[20px] text-[1rem]  flex flex-col">
 
                     <li className="hover:text-[#3B9DF8] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
-                        Home
+                     <Link href="/">Home</Link>
+
+
                     </li>
                     <li className="hover:text-[#3B9DF8] group transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]">
-                        Certificate
+                         <Link href="/certificate">Certificate</Link>
                     </li>
 
                     <li onClick={() => setMobileAboutUsOpen(!mobileAboutUsOpen)}
@@ -168,44 +171,19 @@ const Navbar = () => {
 
                         <ul className="flex flex-col gap-[7px] ">
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[0.9rem]"/> Company
-                                Details
+                                <BsArrowRight className="text-[0.9rem]"/> 
+                                 <Link href="/blog">All project</Link>
                             </li>
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Company
-                                Location
+                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Mern stack web
                             </li>
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Team Members
+                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>App developement
                             </li>
-                            <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/> Office Tour
-                            </li>
+                           
                         </ul>
 
-                        <div
-                            className="flex flex-col gap-[10px] mt-4">
-                            <div
-                                className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
-                                <MdDashboardCustomize
-                                    className="bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]"/>
-                                Full Customize
-                            </div>
-
-                            <div
-                                className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
-                                <CgIfDesign
-                                    className="bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]"/>
-                                Modern Design
-                            </div>
-
-                            <div
-                                className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
-                                <FaCubesStacked
-                                    className="bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]"/>
-                                Well Stacktured
-                            </div>
-                        </div>
+                   
                     </div>
 
 
@@ -226,21 +204,13 @@ const Navbar = () => {
                             <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
                                 <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Full stack
                             </li>
-                            <li className="flex items-center gap-[7px] hover:text-[#3B9DF8] transition-all duration-300">
-                                <BsArrowRight className="text-[#424242] text-[0.9rem]"/>Team Members
-                            </li>
+                           
                             
                         </ul>
 
                         <div
                             className="flex flex-col gap-[10px] mt-4">
-                            <div
-                                className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
-                                <MdDashboardCustomize
-                                    className="bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]"/>
-                                Full Customize
-                            </div>
-
+                           
                             <div
                                 className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
                                 <CgIfDesign

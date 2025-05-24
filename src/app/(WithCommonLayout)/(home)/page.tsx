@@ -10,8 +10,8 @@ const HomePage = () => {
     <main className="relative min-h-screen overflow-hidden bg-[#0F172A]">
       <ParticlesAnimation />
       <HeroSection />
-     <AboutMeSection/>
-   <AllProject/>
+       <AboutMeSection/>
+      <AllProject/>
     </main>
   );
 };
