@@ -22,7 +22,7 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
     <motion.div
       ref={ref}
       style={{ y, opacity, zIndex: 99 - index }}
-      className="min-h-screen flex items-center justify-center sticky top-0 px-4 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#3B0764]"
+      className=" flex items-center justify-center sticky top-0 px-4 bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#3B0764]"
     >
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
@@ -30,7 +30,7 @@ const ProjectCard = ({ project, index }: { project: IProject; index: number }) =
         transition={{ duration: 0.6, delay: index * 0.2 }}
         className="p-6 rounded-2xl bg-white/10 backdrop-blur-md shadow-2xl max-w-5xl w-full grid md:grid-cols-2 gap-8 items-center text-white"
       >
-        {/* Image section */}
+        {/*------------ Image section--------------- */}
         <div className="relative w-full h-64 md:h-80 rounded-xl overflow-hidden shadow-xl">
           <Image
             src={project.image}

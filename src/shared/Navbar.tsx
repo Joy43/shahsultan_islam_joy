@@ -67,7 +67,7 @@ const Navbar = () => {
                                     <MdDashboardCustomize
                                         className="bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]"/>
                                          <Link href="/blog">
-                                    All Project
+                                   Full stack web developer
                                     </Link>
                                 </div>
 
@@ -75,14 +75,14 @@ const Navbar = () => {
                                     className="flex items-center gap-[10px] text-[1rem] ">
                                     <CgIfDesign
                                         className="bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]"/>
-                                   Android Project
+                                   Android app developer
                                 </div>
 
                                 <div
                                     className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
                                     <FaCubesStacked
                                         className="bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]"/>
-                                    Well Design
+                                    Well Designer
                                 </div>
                             </div>
                         </div>
