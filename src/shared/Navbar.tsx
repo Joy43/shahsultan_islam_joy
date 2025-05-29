@@ -47,56 +47,7 @@ const Navbar = () => {
                 </li>
            
 
-                {/* about us mega menu */}
-                <li className=" transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize flex items-center gap-[3px] group relative">
-                    about us
-                    <MdKeyboardArrowDown
-                        className="text-[1.5rem]  group-hover:text-[#3B9DF8] transition-all duration-500 group-hover:rotate-[180deg]"/>
-
-                    <article
-                        className="p-6 bg-white rounded-md boxShadow w-[500px] absolute top-[40px] z-[-1] left-[-100px] group-hover:translate-y-0 translate-y-[-20px] group-hover:opacity-100 opacity-0 group-hover:z-30 transition-all duration-300">
-
-                        <div className="grid grid-cols-2">
-                        
-
-                            <div
-                                className="flex flex-col gap-[10px] border-l border-[#e5eaf2] pl-[30px]">
-                                <div
-                                    className="flex items-center gap-[10px] text-[1rem]">
-                                   
-                                    <MdDashboardCustomize
-                                        className="bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]"/>
-                                         <Link href="/blog">
-                                   Full stack web developer
-                                    </Link>
-                                </div>
-
-                                <div
-                                    className="flex items-center gap-[10px] text-[1rem] ">
-                                    <CgIfDesign
-                                        className="bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]"/>
-                                   Android app developer
-                                </div>
-
-                                <div
-                                    className="flex items-center gap-[10px] text-[1rem] text-[#424242]">
-                                    <FaCubesStacked
-                                        className="bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]"/>
-                                    Well Designer
-                                </div>
-                            </div>
-                        </div>
-
-                         <Image
-             
-              src="/banner.gif"
-              width={150}
-              height={150}
-              alt="Shahsultan Islam Joy"
-              priority
-                             className="w-full object-cover mt-4 rounded-sm h-[150px]"/>
-                    </article>
-                </li>
+                
 
                 {/* Blog mega menu */}
                 <Link href="/blog" className="transition-all duration-500 cursor-pointer hover:text-[#3B9DF8] capitalize group relative flex items-center gap-[3px]">

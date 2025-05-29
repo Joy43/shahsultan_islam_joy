@@ -67,10 +67,6 @@ const AboutMeSection = () => {
   Let’s connect and create something extraordinary!<br />
   📧 <strong>Email:</strong> ssjoy43@gmail.com
 </p>
-{/* 
-          <button className="bg-red-500 hover:bg-pink-600 text-white px-5 py-2 rounded shadow-md transition">
-          Contact Us
-          </button> */}
         </div>
 
         {/*---------------- Right --------------------------*/}

@@ -44,11 +44,11 @@ const HeroSection = () => {
           {/* Experience Stats */}
           <div className="flex gap-6 flex-wrap mt-4">
             <div className="flex flex-col items-start">
-              <h4 className="text-2xl sm:text-3xl font-bold text-[#00FFFF]">2+</h4>
+              <h4 className="text-2xl sm:text-3xl font-bold text-[#00FFFF]">3+</h4>
               <p className="text-sm sm:text-base text-gray-300">Years Experience</p>
             </div>
             <div className="flex flex-col items-start">
-              <h4 className="text-2xl sm:text-3xl font-bold text-[#00FFFF]">77+</h4>
+              <h4 className="text-2xl sm:text-3xl font-bold text-[#00FFFF]">180+</h4>
               <p className="text-sm sm:text-base text-gray-300">Projects Completed</p>
             </div>
             <div className="flex flex-col items-start">
@@ -63,9 +63,9 @@ const HeroSection = () => {
           <div className="relative w-full ">
             <Image
               className="object-cover w-full h-auto"
-              src="/banner.gif"
+              src="/ssjoy.png"
               width={1000}
-              height={800}
+              height={900}
               alt="Shahsultan Islam Joy"
               priority
             />
