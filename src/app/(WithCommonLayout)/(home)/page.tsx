@@ -3,6 +3,7 @@ import ParticlesAnimation from "@/components/animation/particles"
 import AboutMeSection from "@/components/modules/home/AboutMeSection";
 import HeroSection from "@/components/modules/home/HeoSection"
 import AllProject from "../project/page";
+import Skillpage from "@/components/modules/home/Skill/skill";
 
 
 const HomePage = () => {
@@ -12,6 +13,7 @@ const HomePage = () => {
       <HeroSection />
        <AboutMeSection/>
       <AllProject/>
+      <Skillpage></Skillpage>
     </main>
   );
 };
