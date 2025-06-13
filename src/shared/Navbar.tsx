@@ -22,7 +22,9 @@ const Navbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
 
     return (
-        <div className="flex bg-black text-white sticky top-0 z-50 items-center justify-between w-full  h-full p-4">
+        <div className="flex bg-black text-white sticky top-0 z-50
+         items-center justify-between w-full
+         p-4">
 
             {/*---------------- logo -------------------*/}
            <div className="flex-shrink-0 px-4">

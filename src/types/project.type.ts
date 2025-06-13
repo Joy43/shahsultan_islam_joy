@@ -5,6 +5,7 @@ import { IUser } from "./user.types";
 
 
 export interface IProject {
+
   _id: any;
   id: string;
   title: string;

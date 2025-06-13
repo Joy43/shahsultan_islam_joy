@@ -1,25 +1,24 @@
 import ProjectDetails from "@/components/modules/project/projectDetails";
 import { getSingleProject } from "@/services/project";
 
-
-
+// Correct: pages/project/[projectId]/page.tsx
 const ProjectDetailsPage = async ({
   params,
 }: {
-  params: Promise<{ productId: string }>;
+  params: { projectId: string }; 
 }) => {
-  const { productId } = await params;
+  const response = await getSingleProject(params.projectId);
 
-  const { data: product } = await getSingleProject(productId);
+  // validate data shape
+  if (!response?.data) {
+    return <div>Project not found</div>;
+  }
 
   return (
-    <div className="">
-<ProjectDetails product={product}>
-
-</ProjectDetails>
-
+    <div>
+      <ProjectDetails singleprojectdata={response.data} />
     </div>
-  ); 
+  );
 };
 
 export default ProjectDetailsPage;
