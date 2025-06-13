@@ -1,101 +1,145 @@
 'use client'
-import { FaLaptopCode, FaServer, FaSitemap } from 'react-icons/fa';
-import { motion } from 'framer-motion';
+
+import { FaLaptopCode, FaServer, FaSitemap } from 'react-icons/fa'
+import { motion } from 'framer-motion'
+
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.15, duration: 0.6, ease: 'easeOut' },
+  }),
+}
 
 const projects = [
   {
     title: 'Front-end Development',
-    description: 'Developed responsive UIs with React, Next.js, Tailwind CSS, and ShadCN UI, ensuring accessibility, performance, and cross-device compatibility',
-    icon: <FaLaptopCode className="text-3xl text-red-400" />,
+    description:
+      'Responsive UIs with React, Next.js, Tailwind CSS, and ShadCN UI. Accessible, performant & cross-device compatible.',
+    icon: <FaLaptopCode className="text-3xl text-pink-400" />,
     count: '100+ PROJECTS',
     highlight: true,
   },
   {
     title: 'App Development',
-    description: 'Designed and developed responsive user interfaces using React Native, Express, and Node.js, ensuring high performance, accessibility, and seamless compatibility across Android and iOS devices.',
-    icon: <FaLaptopCode className="text-3xl text-red-400" />,
+    description:
+      'Cross-platform mobile apps using React Native, Express, and Node.js for iOS & Android.',
+    icon: <FaLaptopCode className="text-3xl text-pink-400" />,
     count: '2+ PROJECTS',
     highlight: true,
   },
   {
     title: 'Back-end Development',
-    description: 'Built scalable APIs using Node.js, Express, TypeScript, and Prisma with both SQL and NoSQL (MongoDB) databases.',
-    icon: <FaServer className="text-3xl text-red-400" />,
+    description:
+      'Scalable APIs with Node.js, Express, TypeScript, and Prisma for SQL/NoSQL databases.',
+    icon: <FaServer className="text-3xl text-pink-400" />,
     count: '40+ PROJECTS',
     highlight: false,
   },
   {
     title: 'Web Architecture',
-    description: 'Engineered scalable full-stack applications and RESTful APIs using Node.js, Express, TypeScript, Prisma, and MongoDB/SQL, ensuring performance, maintainability, and cross-platform support.',
-    icon: <FaSitemap className="text-3xl text-red-400" />,
+    description:
+      'Full-stack systems with clean architecture using Next.js, TypeScript, Prisma & MongoDB.',
+    icon: <FaSitemap className="text-3xl text-pink-400" />,
     count: '25+ PROJECTS',
     highlight: false,
   },
   {
     title: 'Database Management',
-    description: 'Mongoose,MongoDB,Mysql,GraphSql Prisma, and MongoDB/SQL, ',
-    icon: <FaSitemap className="text-3xl text-red-400" />,
+    description:
+      'Secure and optimized data with MongoDB, MySQL, GraphQL, Prisma.',
+    icon: <FaSitemap className="text-3xl text-pink-400" />,
     count: '25+ PROJECTS',
     highlight: false,
   },
-];
+]
 
 const AboutMeSection = () => {
   return (
-    <section className="bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#3B0764] text-white px-6 md:px-20 py-16">
-      {/*--------------------- Left ----------------------*/}
-      <div className="flex flex-col md:flex-row justify-between items-center gap-10">
-        <div className="flex-1">
-          <p className="text-2xl font-semibold text-red-400 mb-2">About Me</p>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Why you <span className="text-pink-500">hire me</span> for <br />
-            your <span className="text-red-400 italic">next project?</span>
-          </h2>
-        <p className="text-slate-300 mb-6">
-  I’m a passionate full Stack and MERN Web Developer committed to building immersive, high-impact digital experiences. With strong expertise in React, Next.js, React Native, Tailwind CSS, Firebase, Prisma, and PostgreSQL, I specialize in developing dynamic, responsive, and user-friendly applications that make a lasting impression.
-  <br /><br />
-  🔥 <strong>Backend & Full Stack Expertise:</strong><br />
-  I’m proficient in Node.js, Express.js, Mongoose, GraphQL, and MongoDB, enabling me to deliver seamless server-side operations, robust API integrations, and scalable full stack solutions.
-  <br /><br />
-  🏆 <strong>Certifications & Achievements:</strong><br />
-  - Certified E-skills Frontend Developer<br />
-  - Graduate of Programming Hero with hands-on experience in real-world projects and industry-ready skills.
-  <br /><br />
-  🚀 <strong>What Drives Me:</strong><br />
-  I’m always eager to collaborate on meaningful projects, explore the latest technologies, and deliver high-quality results that exceed expectations.
-  <br /><br />
-  Let’s connect and create something extraordinary!<br />
-  📧 <strong>Email:</strong> ssjoy43@gmail.com
-</p>
-        </div>
+    <section className="relative bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#3B0764] text-white px-6 md:px-20 py-20 overflow-hidden scroll-mt-20">
+      {/* Blur background */}
+      <div className="absolute top-[-10%] left-1/2 w-[600px] h-[600px] bg-[#FF00FF]/20 blur-3xl rounded-full transform -translate-x-1/2 z-0"></div>
 
-        {/*---------------- Right --------------------------*/}
-        <div className="flex-1 flex flex-col gap-4">
-          {projects.map((proj, index) => (
+      <div className="relative z-10 flex flex-col md:flex-row items-start gap-16 justify-between">
+        {/* Left Content */}
+        <motion.div
+          className="flex-1 space-y-6"
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
+        >
+          <motion.p className="text-2xl font-semibold text-pink-400" variants={fadeInUp}>
+            About Me
+          </motion.p>
+
+          <motion.h2 className="text-4xl font-bold leading-snug" variants={fadeInUp}>
+            Why you <span className="text-pink-400">should hire me</span> <br />
+            for your <span className="italic text-purple-400">next project?</span>
+          </motion.h2>
+
+          <motion.div className="text-slate-300 text-base space-y-6 leading-relaxed" variants={fadeInUp}>
+            <p>
+              I’m a passionate Full Stack Developer with experience building immersive web and mobile experiences.
+            </p>
+
+            <div>
+              <strong className="text-purple-400">🔥 Technical Expertise:</strong><br />
+              Proficient in <strong>React.js, Next.js, React Native</strong> for frontend and <strong>Node.js, Express.js, Prisma, GraphQL</strong> for backend.
+            </div>
+
+            <div>
+              <strong className="text-purple-400">🧠 Problem Solver at Heart:</strong><br />
+              I transform complex problems into intuitive, performant solutions with maintainable code.
+            </div>
+
+            <div>
+              <strong className="text-purple-400">💼 Experience:</strong><br />
+              - 100+ Front-end Projects<br />
+              - 40+ Backend APIs<br />
+              - 25+ Full-stack Apps (Web & Mobile)
+            </div>
+
+            <div>
+              <strong className="text-purple-400">📧 Email:</strong>{' '}
+              <a href="mailto:ssjoy43@gmail.com" className="underline text-blue-400 hover:text-blue-300">ssjoy43@gmail.com</a><br />
+              <strong className="text-purple-400">🔗 LinkedIn:</strong>{' '}
+              <a href="https://linkedin.com/in/your-link" target="_blank" className="underline text-blue-400 hover:text-blue-300">linkedin.com/in/your-link</a><br />
+              <strong className="text-purple-400">💻 GitHub:</strong>{' '}
+              <a href="https://github.com/your-github" target="_blank" className="underline text-blue-400 hover:text-blue-300">github.com/your-github</a>
+            </div>
+          </motion.div>
+        </motion.div>
+
+        {/* Right Cards */}
+        <div className="flex-1 flex flex-col gap-5 w-full">
+          {projects.map((proj, i) => (
             <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.2 }}
-              className={`flex items-center gap-4 p-4 rounded-xl shadow-md ${
+              key={i}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              variants={fadeInUp}
+              viewport={{ once: true }}
+              whileHover={{ scale: 1.03, rotate: proj.highlight ? 0.5 : 0 }}
+              className={`flex items-start gap-4 p-5 rounded-2xl border border-white/10 shadow-xl transition-all duration-300 ${
                 proj.highlight
-                  ? 'bg-gradient-to-r from-[#1E293B] to-[#312E81]'
-                  : 'bg-[#1E293B]'
+                  ? 'bg-gradient-to-r from-[#0f0f1c]/70 to-[#1E293B]/70 backdrop-blur-md'
+                  : 'bg-[#1E293B]/60 backdrop-blur-md'
               }`}
             >
-              <div className="p-3 bg-[#312E81] rounded-full">{proj.icon}</div>
-              <div>
-                <h4 className="font-semibold text-lg text-white">{proj.title}</h4>
-                <p className="text-sm text-slate-400">{proj.description}</p>
+              <div className="p-3 rounded-full bg-white/10">{proj.icon}</div>
+              <div className="flex-1">
+                <h4 className="text-lg font-semibold">{proj.title}</h4>
+                <p className="text-sm text-slate-400 mt-1">{proj.description}</p>
               </div>
-              <div className="ml-auto text-xs text-red-400">{proj.count}</div>
+              <div className="text-xs font-semibold text-pink-400 whitespace-nowrap">{proj.count}</div>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default AboutMeSection;
+export default AboutMeSection

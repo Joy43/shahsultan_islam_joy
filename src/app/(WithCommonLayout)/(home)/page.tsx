@@ -9,7 +9,7 @@ import Skillpage from "@/components/modules/home/Skill/skill";
 const HomePage = () => {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#0F172A]">
-      {/* <ParticlesAnimation /> */}
+   
       <HeroSection />
        <AboutMeSection/>
       <AllProject/>

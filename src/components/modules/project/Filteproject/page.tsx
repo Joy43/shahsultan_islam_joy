@@ -1,11 +1,22 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
+import { motion } from "framer-motion";
+import { FaGlobe, FaMobileAlt, FaServer, FaCode, FaDatabase, FaBoxes } from "react-icons/fa";
 
 interface Props {
   categories: string[];
   onFilterChange: (category: string) => void;
 }
+
+const iconMap: Record<string, JSX.Element> = {
+  "Front-end": <FaCode />,
+  "App": <FaMobileAlt />,
+  "Back-end": <FaServer />,
+  "Database": <FaDatabase />,
+  "Web Architecture": <FaGlobe />,
+  "Others": <FaBoxes />,
+};
 
 const FilterProject = ({ categories, onFilterChange }: Props) => {
   const [selected, setSelected] = useState("");
@@ -15,28 +26,38 @@ const FilterProject = ({ categories, onFilterChange }: Props) => {
     onFilterChange(category);
   };
 
+  const getIcon = (category: string) => {
+    return iconMap[category] || <FaBoxes />;
+  };
+
   return (
-    <div className="flex flex-wrap gap-3 justify-center mb-8">
-      <button
+    <div className="flex bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#3B0764] flex-wrap gap-4 justify-center py-6 px-4 rounded-xl shadow-inner mb-8">
+      <motion.button
+        whileTap={{ scale: 0.95 }}
         onClick={() => handleFilter("")}
-        className={`px-4 py-2 rounded-full border ${
-          selected === "" ? "bg-purple-600 text-white" : "bg-white/10 text-white hover:bg-white/20"
-        } transition-all`}
+        className={`flex items-center gap-2 px-5 py-2 rounded-full border-2 text-sm font-medium shadow-md transition-all ${
+          selected === "" ? "bg-purple-700 text-white border-purple-500" : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+        }`}
       >
+        <FaBoxes className="text-white" />
         All
-      </button>
+      </motion.button>
+
       {categories.map((category) => (
-        <button
+        <motion.button
+          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
           key={category}
           onClick={() => handleFilter(category)}
-          className={`px-4 py-2 rounded-full border ${
+          className={`flex items-center gap-2 px-5 py-2 rounded-full border-2 text-sm font-medium shadow-md transition-all ${
             selected === category
-              ? "bg-purple-600 text-white"
-              : "bg-white/10 text-white hover:bg-white/20"
-          } transition-all`}
+              ? "bg-purple-700 text-white border-purple-500"
+              : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+          }`}
         >
+          {getIcon(category)}
           {category}
-        </button>
+        </motion.button>
       ))}
     </div>
   );
